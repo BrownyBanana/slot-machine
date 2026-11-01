@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meme Slot Machine</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loading-screen" class="loading-screen">
+    <p class="loading-text">Loading Meme Slot Machine...</p>
+    <div class="loading-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div id="fx-layer" class="fx-layer"></div>
+  <div id="screen-flash" class="screen-flash"></div>
+
+
+  <button id="sound-toggle" class="sound-toggle" title="Mute / Unmute">🔊</button>
+
+
+  <header class="site-header">
+    <h1 class="site-title">MEME SLOT MACHINE</h1>
+    <p class="site-subtitle">Spin and test your meme luck</p>
+  </header>
+
+  <div class="stats-row">
+    
+
+
+    <div class="stat-pill">🏆 Best Credits: <span id="best-credits-value">100</span></div>
+    <div class="stat-pill">🌀 Spins: <span id="spin-count-value">0</span></div>
+    <div class="stat-pill">🔥 Win Streak: <span id="win-streak-value">0</span></div>
+  </div>
+
+
+  <main class="table-area">
+
+    <section class="machine-card" id="machine-card">
+
+      <div class="reels-wrap">
+        <div class="reel" id="reel-0">
+          <div class="reel-strip" id="strip-0"></div>
+        </div>
+        <div class="reel" id="reel-1">
+          <div class="reel-strip" id="strip-1"></div>
+        </div>
+        <div class="reel" id="reel-2">
+          <div class="reel-strip" id="strip-2"></div>
+        </div>
+      </div>
+
+      <div class="rules-card">
+        <p class="rules-title">Winning Rules</p>
+        <div class="rules-line">
+          <span>⭐⭐⭐ Match 3</span>
+          <span class="rules-plus">+100 Credits</span>
+        </div>
+        <div class="rules-line">
+          <span>⭐⭐ Match 2</span>
+          <span class="rules-minus">-20 Credits</span>
+        </div>
+        <div class="rules-line">
+          <span>⭐ No Match</span>
+          <span class="rules-minus">-30 Credits</span>
+        </div>
+      </div>
+
+      <div class="control-row">
+        <button id="spin-btn" class="spin-btn">
+          <span class="spin-btn-label">SPIN</span>
+        </button>
+
+        <div class="credits-pill" id="credits-pill">
+          CREDITS: <span id="credits-value">100</span>
+        </div>
+      </div>
+
+      <div class="result-row">
+        Last Result: <span id="result-value" class="result-value">You Win!</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    © 2024 Meme Slot Machine. All rights reserved. Play Responsibly.
+  </footer>
+
+  <div id="gameover-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h2 class="modal-title">BAD LUCK!</h2>
+      <p class="modal-message">You ran out of credits.<br />Try Again!</p>
+      <button id="play-again-btn" class="play-again-btn">Play Again?</button>
+    </div>
+  </div>
+
+  <audio id="sound-spin" src="audios/spin.mp3" preload="auto"></audio>
+  <audio id="sound-win" src="audio/victory.mp3" preload="auto"></audio>
+  <audio id="sound-lose" src="audio/lose.mp3" preload="auto"></audio>
+  <audio id="sound-jackpot" src="audio/jackpot.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
